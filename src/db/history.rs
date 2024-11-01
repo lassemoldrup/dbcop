@@ -73,11 +73,11 @@ impl fmt::Debug for Transaction {
 
 #[derive(Clone, Debug, Default, Deserialize, Serialize)]
 pub struct HistParams {
-    id: usize,
-    n_node: usize,
-    n_variable: usize,
-    n_transaction: usize,
-    n_event: usize,
+    pub id: usize,
+    pub n_node: usize,
+    pub n_variable: usize,
+    pub n_transaction: usize,
+    pub n_event: usize,
 }
 
 impl HistParams {
