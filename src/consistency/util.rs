@@ -101,7 +101,7 @@ pub trait ConstrainedLinearization {
 
     fn get_root(&self) -> Self::Vertex;
 
-    fn children_of(&self, &Self::Vertex) -> Option<Vec<Self::Vertex>>;
+    fn children_of(&self, v: &Self::Vertex) -> Option<Vec<Self::Vertex>>;
 
     fn allow_next(&self, linearization: &[Self::Vertex], v: &Self::Vertex) -> bool;
 

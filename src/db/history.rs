@@ -161,9 +161,9 @@ pub fn generate_single_history(
     let mut counters = HashMap::new();
     let mut random_generator = rand::thread_rng();
     let read_variable_range = Uniform::from(0..n_variable);
-    let jump = (n_variable as f64 / n_node as f64).ceil() as usize;
+    let _jump = (n_variable as f64 / n_node as f64).ceil() as usize;
     (0..n_node)
-        .map(|i_node| {
+        .map(|_i_node| {
             // let i = i_node * jump;
             // let j = std::cmp::min((i_node + 1) * jump, n_variable);
             // let write_variable_range = Uniform::from(i..j);

@@ -133,7 +133,7 @@ impl AtomicHistoryPO {
 pub struct PrefixConsistentHistory {
     pub history: AtomicHistoryPO,
     pub active_write: HashMap<Variable, HashSet<TransactionId>>,
-    log: Logger,
+    _log: Logger,
 }
 
 impl PrefixConsistentHistory {
@@ -141,7 +141,7 @@ impl PrefixConsistentHistory {
         Self {
             history: AtomicHistoryPO::new(txns_info),
             active_write: Default::default(),
-            log,
+            _log: log,
         }
     }
 }
@@ -239,7 +239,7 @@ pub struct SnapshotIsolationHistory {
     pub history: AtomicHistoryPO,
     pub active_write: HashMap<Variable, HashSet<TransactionId>>,
     pub active_variable: HashSet<Variable>,
-    log: Logger,
+    _log: Logger,
 }
 
 impl SnapshotIsolationHistory {
@@ -248,7 +248,7 @@ impl SnapshotIsolationHistory {
             history: AtomicHistoryPO::new(txns_info),
             active_write: Default::default(),
             active_variable: Default::default(),
-            log,
+            _log: log,
         }
     }
 }
@@ -370,7 +370,7 @@ impl ConstrainedLinearization for SnapshotIsolationHistory {
 pub struct SerializableHistory {
     pub history: AtomicHistoryPO,
     pub active_write: HashMap<Variable, HashSet<TransactionId>>,
-    log: Logger,
+    _log: Logger,
 }
 
 impl SerializableHistory {
@@ -378,7 +378,7 @@ impl SerializableHistory {
         Self {
             history: AtomicHistoryPO::new(txns_info),
             active_write: Default::default(),
-            log,
+            _log: log,
         }
     }
 }

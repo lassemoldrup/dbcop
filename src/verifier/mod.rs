@@ -24,7 +24,7 @@ pub struct Verifier {
     consistency_model: Consistency,
     use_sat: bool,
     use_bicomponent: bool,
-    dir: PathBuf,
+    _dir: PathBuf,
 }
 
 impl Verifier {
@@ -37,7 +37,7 @@ impl Verifier {
             consistency_model: Consistency::Serializable,
             use_sat: false,
             use_bicomponent: false,
-            dir,
+            _dir: dir,
         }
     }
 
@@ -525,7 +525,7 @@ impl Verifier {
                     ser_hist.history.vis_includes(&wr);
                     let mut change = false;
                     // wsc code
-                    let mut now = std::time::Instant::now();
+                    // let now = std::time::Instant::now();
                     // println!("wsc start");
                     loop {
                         change |= ser_hist.history.vis_is_trans();
@@ -576,7 +576,7 @@ impl Verifier {
                         // }
                         // lin_o.is_some();
 
-                        now = std::time::Instant::now();
+                        // let now = std::time::Instant::now();
                         if ser_hist.get_linearization().is_some() {
                             // println!("dbcop main algorithm took {}secs", now.elapsed().as_secs());
                             None
